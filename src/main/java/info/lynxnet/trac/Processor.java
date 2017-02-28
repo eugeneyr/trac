@@ -54,19 +54,24 @@ public class Processor {
         }
         InterpreterState state = this.initialState;
         while (!context.shouldExit()) {
-            Class<? extends InterpreterState> nextStateClass = state.actionAndTransition(context);
-            if (nextStateClass == null) {
-                System.err.println(String.format("FATAL: State %s transitioned to null", state.getClass().getName()));
-                context.setExitCode(-1);
-                context.setExit(true);
+            try {
+                Class<? extends InterpreterState> nextStateClass = state.actionAndTransition(context);
+                if (nextStateClass == null) {
+                    System.err.println(String.format("FATAL: State %s transitioned to null", state.getClass().getName()));
+                    context.setExitCode(-1);
+                    context.setExit(true);
+                }
+                InterpreterState nextState = this.stateCache.get(nextStateClass);
+                if (nextState == null) {
+                    System.err.println(String.format("FATAL: State %s was not pre-instantiated", nextStateClass.getName()));
+                    context.setExitCode(-1);
+                    context.setExit(true);
+                }
+                state = nextState;
+            } catch (Throwable e) {
+                e.printStackTrace(System.err);
+                state = initialState;
             }
-            InterpreterState nextState = this.stateCache.get(nextStateClass);
-            if (nextState == null) {
-                System.err.println(String.format("FATAL: State %s was not pre-instantiated", nextStateClass.getName()));
-                context.setExitCode(-1);
-                context.setExit(true);
-            }
-            state = nextState;
         }
         context.setInput(System.in);
         context.setOutput(System.out);
