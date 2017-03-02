@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="hl"><![CDATA[
+#(hl,Z)         "Halt" (One or two arguments) This null-valued function causes an immediate exit from the
+                TRAC processor. The integer value of the optional second argument (0 if omited) will be used
+                as the exit code.]]>
+    </entry>
+</properties>

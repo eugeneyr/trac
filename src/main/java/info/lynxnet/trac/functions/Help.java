@@ -4,12 +4,25 @@ import info.lynxnet.trac.Context;
 import info.lynxnet.trac.FunctionEvaluator;
 import info.lynxnet.trac.StackElement;
 
+import java.io.InputStream;
 import java.util.HashSet;
+import java.util.Properties;
+import java.util.ResourceBundle;
 import java.util.Set;
 
 public class Help implements BuiltInFunction {
     public static final String FUNCTION_MNEMONICS = "help";
     public static final String FUNCTION_NAME = "Help";
+
+    private static final Properties helpProps = new Properties();
+
+    static {
+        try (InputStream is = Help.class.getResourceAsStream("/HelpMessages.xml")) {
+            helpProps.loadFromXML(is);
+        } catch (Throwable t) {
+            t.printStackTrace(System.err);
+        }
+    }
 
     @Override
     public String getMnemonics() {
@@ -31,7 +44,9 @@ public class Help implements BuiltInFunction {
         StringBuilder sb = new StringBuilder();
         Set<String> cats = new HashSet<>();
         String funcName = stackElement.getArgumentValue(1);
-        if (FunctionEvaluator.BUILTINS.containsKey(funcName)) {
+        if (helpProps.containsKey(funcName)) {
+            sb.append(helpProps.getProperty(funcName));
+        } else if (FunctionEvaluator.BUILTINS.containsKey(funcName)) {
             BuiltInFunction func = FunctionEvaluator.BUILTINS.get(funcName);
             sb.append(String.format("#(%s)\t%s [%s]\n", func.getMnemonics(), func.getName(), func.getCategory()));
         } else {
