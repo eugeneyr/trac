@@ -8,6 +8,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
+@RegisteredFunction(name = AssignInput.FUNCTION_NAME, mnemonics = AssignInput.FUNCTION_MNEMONICS)
 public class AssignInput implements BuiltInFunction {
     public static final String FUNCTION_MNEMONICS = "ai";
     public static final String FUNCTION_NAME = "Assign Input";
