@@ -4,6 +4,7 @@ import info.lynxnet.trac.*;
 
 import java.math.BigInteger;
 
+@RegisteredFunction(name = Add.FUNCTION_NAME, mnemonics = Add.FUNCTION_MNEMONICS, aliases = {"+"})
 public class Add implements BuiltInFunction {
     public static final String FUNCTION_MNEMONICS = "ad";
     public static final String FUNCTION_NAME = "Add";
