@@ -2,7 +2,11 @@ package info.lynxnet.trac.functions;
 
 import info.lynxnet.trac.*;
 
-public class ChangeMetacharacter implements BuiltInFunction {
+@RegisteredFunction(
+        name = ChangeMetacharacter.FUNCTION_NAME,
+        mnemonics = ChangeMetacharacter.FUNCTION_MNEMONICS,
+        category = FunctionCategory.IO)
+public class ChangeMetacharacter implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "cm";
     public static final String FUNCTION_NAME = "Change Metacharacter";
 

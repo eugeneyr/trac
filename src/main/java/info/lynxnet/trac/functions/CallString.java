@@ -4,7 +4,11 @@ import info.lynxnet.trac.*;
 
 import java.util.List;
 
-public class CallString implements BuiltInFunction {
+@RegisteredFunction(
+        name = CallString.FUNCTION_NAME,
+        mnemonics = CallString.FUNCTION_MNEMONICS,
+        category = FunctionCategory.FORMS)
+public class CallString implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "cl";
     public static final String FUNCTION_NAME = "Call String";
 

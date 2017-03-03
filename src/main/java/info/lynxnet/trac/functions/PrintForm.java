@@ -4,7 +4,11 @@ import info.lynxnet.trac.*;
 
 import java.util.List;
 
-public class PrintForm implements BuiltInFunction {
+@RegisteredFunction(
+        name = PrintForm.FUNCTION_NAME,
+        mnemonics = PrintForm.FUNCTION_MNEMONICS,
+        category = FunctionCategory.DEBUG)
+public class PrintForm implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "pf";
     public static final String FUNCTION_NAME = "Print Form";
 

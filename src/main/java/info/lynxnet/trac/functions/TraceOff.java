@@ -3,7 +3,11 @@ package info.lynxnet.trac.functions;
 import info.lynxnet.trac.Context;
 import info.lynxnet.trac.StackElement;
 
-public class TraceOff implements BuiltInFunction {
+@RegisteredFunction(
+        name = TraceOff.FUNCTION_NAME,
+        mnemonics = TraceOff.FUNCTION_MNEMONICS,
+        category = FunctionCategory.DEBUG)
+public class TraceOff implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "tf";
     public static final String FUNCTION_NAME = "Trace Off";
 

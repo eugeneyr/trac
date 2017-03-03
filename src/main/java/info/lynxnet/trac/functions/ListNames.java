@@ -3,7 +3,11 @@ package info.lynxnet.trac.functions;
 import info.lynxnet.trac.Context;
 import info.lynxnet.trac.StackElement;
 
-public class ListNames implements BuiltInFunction {
+@RegisteredFunction(
+        name = ListNames.FUNCTION_NAME,
+        mnemonics = ListNames.FUNCTION_MNEMONICS,
+        category = FunctionCategory.FORMS)
+public class ListNames implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "ln";
     public static final String FUNCTION_NAME = "List Names";
 

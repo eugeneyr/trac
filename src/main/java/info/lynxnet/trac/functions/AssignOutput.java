@@ -8,7 +8,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
-public class AssignOutput implements BuiltInFunction {
+@RegisteredFunction(
+        name = AssignOutput.FUNCTION_NAME, mnemonics = AssignOutput.FUNCTION_MNEMONICS, category = FunctionCategory.IO)
+public class AssignOutput implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "ao";
     public static final String FUNCTION_NAME = "Assign Output";
 

@@ -2,7 +2,11 @@ package info.lynxnet.trac.functions;
 
 import info.lynxnet.trac.*;
 
-public class SegmentString implements BuiltInFunction {
+@RegisteredFunction(
+        name = SegmentString.FUNCTION_NAME,
+        mnemonics = SegmentString.FUNCTION_MNEMONICS,
+        category = FunctionCategory.FORMS)
+public class SegmentString implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "ss";
     public static final String FUNCTION_NAME = "Segment String";
 

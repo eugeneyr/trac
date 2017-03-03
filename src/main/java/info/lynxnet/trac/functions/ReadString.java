@@ -6,7 +6,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ReadString implements BuiltInFunction {
+@RegisteredFunction(
+        name = ReadString.FUNCTION_NAME,
+        mnemonics = ReadString.FUNCTION_MNEMONICS,
+        category = FunctionCategory.IO)
+public class ReadString implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "rs";
     public static final String FUNCTION_NAME = "Read String";
 

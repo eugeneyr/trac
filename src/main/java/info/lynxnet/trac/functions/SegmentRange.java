@@ -4,7 +4,11 @@ import info.lynxnet.trac.*;
 
 import java.util.OptionalInt;
 
-public class SegmentRange implements BuiltInFunction {
+@RegisteredFunction(
+        name = SegmentRange.FUNCTION_NAME,
+        mnemonics = SegmentRange.FUNCTION_MNEMONICS,
+        category = FunctionCategory.FORMS)
+public class SegmentRange implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "sr";
     public static final String FUNCTION_NAME = "Segment Range";
 

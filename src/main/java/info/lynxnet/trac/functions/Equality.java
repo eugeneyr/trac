@@ -3,7 +3,11 @@ package info.lynxnet.trac.functions;
 import info.lynxnet.trac.Context;
 import info.lynxnet.trac.StackElement;
 
-public class Equality implements BuiltInFunction {
+@RegisteredFunction(
+        name = Equality.FUNCTION_NAME,
+        mnemonics = {Equality.FUNCTION_MNEMONICS, "="},
+        category = FunctionCategory.BOOLEAN)
+public class Equality implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "eq";
     public static final String FUNCTION_NAME = "Equiality";
 

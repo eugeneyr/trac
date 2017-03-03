@@ -3,7 +3,11 @@ package info.lynxnet.trac.functions;
 import info.lynxnet.trac.Context;
 import info.lynxnet.trac.StackElement;
 
-public class Halt implements BuiltInFunction {
+@RegisteredFunction(
+        name = Halt.FUNCTION_NAME,
+        mnemonics = {Halt.FUNCTION_MNEMONICS, "exit"},
+        category = FunctionCategory.IO)
+public class Halt implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "hl";
     public static final String FUNCTION_NAME = "Halt";
 

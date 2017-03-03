@@ -4,7 +4,11 @@ import info.lynxnet.trac.Context;
 import info.lynxnet.trac.NumericUtils;
 import info.lynxnet.trac.StackElement;
 
-public class BooleanShift implements BuiltInFunction {
+@RegisteredFunction(
+        name = BooleanShift.FUNCTION_NAME,
+        mnemonics = {BooleanShift.FUNCTION_MNEMONICS, ">>"},
+        category = FunctionCategory.BOOLEAN)
+public class BooleanShift implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "bs";
     public static final String FUNCTION_NAME = "Boolean Shift";
 

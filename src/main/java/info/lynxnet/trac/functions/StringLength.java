@@ -3,7 +3,11 @@ package info.lynxnet.trac.functions;
 import info.lynxnet.trac.Context;
 import info.lynxnet.trac.StackElement;
 
-public class StringLength implements BuiltInFunction {
+@RegisteredFunction(
+        name = StringLength.FUNCTION_NAME,
+        mnemonics = StringLength.FUNCTION_MNEMONICS,
+        category = FunctionCategory.STRING)
+public class StringLength implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "sl";
     public static final String FUNCTION_NAME = "String Length";
 

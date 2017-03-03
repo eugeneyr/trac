@@ -2,7 +2,11 @@ package info.lynxnet.trac.functions;
 
 import info.lynxnet.trac.*;
 
-public class Greater implements BuiltInFunction {
+@RegisteredFunction(
+        name = Greater.FUNCTION_NAME,
+        mnemonics = {Greater.FUNCTION_MNEMONICS, ">"},
+        category = FunctionCategory.BOOLEAN)
+public class Greater implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "gr";
     public static final String FUNCTION_NAME = "Greater";
 

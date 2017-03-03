@@ -7,7 +7,11 @@ import info.lynxnet.trac.StackElement;
 
 import java.math.BigInteger;
 
-public class Divide implements BuiltInFunction {
+@RegisteredFunction(
+        name = Divide.FUNCTION_NAME,
+        mnemonics = {Divide.FUNCTION_MNEMONICS, "/"},
+        category = FunctionCategory.ARITHMETIC)
+public class Divide implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "dv";
     public static final String FUNCTION_NAME = "Divide";
 

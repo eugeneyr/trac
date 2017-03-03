@@ -3,7 +3,11 @@ package info.lynxnet.trac.functions;
 import info.lynxnet.trac.Context;
 import info.lynxnet.trac.StackElement;
 
-public class DecimalToCharacter implements BuiltInFunction {
+@RegisteredFunction(
+        name = DecimalToCharacter.FUNCTION_NAME,
+        mnemonics = DecimalToCharacter.FUNCTION_MNEMONICS,
+        category = FunctionCategory.STRING)
+public class DecimalToCharacter implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "dc";
     public static final String FUNCTION_NAME = "Decimal to Character";
 

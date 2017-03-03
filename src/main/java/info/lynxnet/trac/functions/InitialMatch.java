@@ -5,7 +5,11 @@ import info.lynxnet.trac.*;
 import java.util.List;
 import java.util.Optional;
 
-public class InitialMatch implements BuiltInFunction {
+@RegisteredFunction(
+        name = InitialMatch.FUNCTION_NAME,
+        mnemonics = InitialMatch.FUNCTION_MNEMONICS,
+        category = FunctionCategory.FORMS)
+public class InitialMatch implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "in";
     public static final String FUNCTION_NAME = "Initial Match";
 

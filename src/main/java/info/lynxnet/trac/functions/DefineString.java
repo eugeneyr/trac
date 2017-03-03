@@ -5,7 +5,11 @@ import info.lynxnet.trac.Form;
 import info.lynxnet.trac.Lexem;
 import info.lynxnet.trac.StackElement;
 
-public class DefineString implements BuiltInFunction {
+@RegisteredFunction(
+        name = DefineString.FUNCTION_NAME,
+        mnemonics = DefineString.FUNCTION_MNEMONICS,
+        category = FunctionCategory.FORMS)
+public class DefineString implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "ds";
     public static final String FUNCTION_NAME = "Define String";
 

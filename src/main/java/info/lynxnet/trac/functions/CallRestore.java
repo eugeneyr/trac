@@ -5,7 +5,11 @@ import info.lynxnet.trac.Form;
 import info.lynxnet.trac.Lexem;
 import info.lynxnet.trac.StackElement;
 
-public class CallRestore implements BuiltInFunction {
+@RegisteredFunction(
+        name = CallRestore.FUNCTION_NAME,
+        mnemonics = CallRestore.FUNCTION_MNEMONICS,
+        category = FunctionCategory.FORMS)
+public class CallRestore implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "cr";
     public static final String FUNCTION_NAME = "Call Restore";
 

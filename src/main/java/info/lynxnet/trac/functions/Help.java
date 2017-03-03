@@ -7,10 +7,13 @@ import info.lynxnet.trac.StackElement;
 import java.io.InputStream;
 import java.util.HashSet;
 import java.util.Properties;
-import java.util.ResourceBundle;
 import java.util.Set;
 
-public class Help implements BuiltInFunction {
+@RegisteredFunction(
+        name = Help.FUNCTION_NAME,
+        mnemonics = Help.FUNCTION_MNEMONICS,
+        category = FunctionCategory.DEBUG)
+public class Help implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "help";
     public static final String FUNCTION_NAME = "Help";
 
@@ -47,7 +50,7 @@ public class Help implements BuiltInFunction {
         if (helpProps.containsKey(funcName)) {
             sb.append(helpProps.getProperty(funcName));
         } else if (FunctionEvaluator.BUILTINS.containsKey(funcName)) {
-            BuiltInFunction func = FunctionEvaluator.BUILTINS.get(funcName);
+            TracFunction func = FunctionEvaluator.BUILTINS.get(funcName);
             sb.append(String.format("#(%s)\t%s [%s]\n", func.getMnemonics(), func.getName(), func.getCategory()));
         } else {
             FunctionEvaluator.BUILTINS.values().stream().sorted((a, b) -> {

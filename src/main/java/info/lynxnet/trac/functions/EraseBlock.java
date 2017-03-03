@@ -8,7 +8,11 @@ import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 
-public class EraseBlock implements BuiltInFunction {
+@RegisteredFunction(
+        name = EraseBlock.FUNCTION_NAME,
+        mnemonics = EraseBlock.FUNCTION_MNEMONICS,
+        category = FunctionCategory.STORAGE)
+public class EraseBlock implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "eb";
     public static final String FUNCTION_NAME = "Erase Block";
 

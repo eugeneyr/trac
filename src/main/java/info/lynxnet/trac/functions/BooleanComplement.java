@@ -4,7 +4,11 @@ import info.lynxnet.trac.Context;
 import info.lynxnet.trac.NumericUtils;
 import info.lynxnet.trac.StackElement;
 
-public class BooleanComplement implements BuiltInFunction {
+@RegisteredFunction(
+        name = BooleanComplement.FUNCTION_NAME,
+        mnemonics = {BooleanComplement.FUNCTION_MNEMONICS, "~"},
+        category = FunctionCategory.BOOLEAN)
+public class BooleanComplement implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "bc";
     public static final String FUNCTION_NAME = "Boolean Complement";
 

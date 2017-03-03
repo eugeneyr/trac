@@ -10,7 +10,11 @@ import java.io.ObjectInputStream;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 
-public class FetchBlock implements BuiltInFunction {
+@RegisteredFunction(
+        name = FetchBlock.FUNCTION_NAME,
+        mnemonics = FetchBlock.FUNCTION_MNEMONICS,
+        category = FunctionCategory.STORAGE)
+public class FetchBlock implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "fb";
     public static final String FUNCTION_NAME = "Fetch Block";
 

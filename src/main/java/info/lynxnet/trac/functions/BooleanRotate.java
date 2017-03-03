@@ -4,7 +4,11 @@ import info.lynxnet.trac.Context;
 import info.lynxnet.trac.NumericUtils;
 import info.lynxnet.trac.StackElement;
 
-public class BooleanRotate implements BuiltInFunction {
+@RegisteredFunction(
+        name = BooleanRotate.FUNCTION_NAME,
+        mnemonics = {BooleanRotate.FUNCTION_MNEMONICS, ">>>"},
+        category = FunctionCategory.BOOLEAN)
+public class BooleanRotate implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "br";
     public static final String FUNCTION_NAME = "Boolean Rotate";
 

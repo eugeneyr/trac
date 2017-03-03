@@ -9,7 +9,11 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StoreBlock implements BuiltInFunction {
+@RegisteredFunction(
+        name = StoreBlock.FUNCTION_NAME,
+        mnemonics = StoreBlock.FUNCTION_MNEMONICS,
+        category = FunctionCategory.STORAGE)
+public class StoreBlock implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "sb";
     public static final String FUNCTION_NAME = "Store Block";
 

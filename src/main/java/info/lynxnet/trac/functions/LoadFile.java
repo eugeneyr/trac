@@ -8,7 +8,11 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class LoadFile implements BuiltInFunction {
+@RegisteredFunction(
+        name = LoadFile.FUNCTION_NAME,
+        mnemonics = LoadFile.FUNCTION_MNEMONICS,
+        category = FunctionCategory.IO)
+public class LoadFile implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "ld";
     public static final String FUNCTION_NAME = "Load File";
 

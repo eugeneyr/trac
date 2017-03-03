@@ -3,7 +3,11 @@ package info.lynxnet.trac.functions;
 import info.lynxnet.trac.Context;
 import info.lynxnet.trac.StackElement;
 
-public class QueryMetacharacter implements BuiltInFunction {
+@RegisteredFunction(
+        name = QueryMetacharacter.FUNCTION_NAME,
+        mnemonics = QueryMetacharacter.FUNCTION_MNEMONICS,
+        category = FunctionCategory.STRING)
+public class QueryMetacharacter implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "qm";
     public static final String FUNCTION_NAME = "Query Metacharacter";
 

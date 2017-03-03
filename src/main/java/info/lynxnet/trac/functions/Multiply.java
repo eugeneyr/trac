@@ -7,7 +7,11 @@ import info.lynxnet.trac.StackElement;
 
 import java.math.BigInteger;
 
-public class Multiply implements BuiltInFunction {
+@RegisteredFunction(
+        name = Multiply.FUNCTION_NAME,
+        mnemonics = {Multiply.FUNCTION_MNEMONICS, "*"},
+        category = FunctionCategory.ARITHMETIC)
+public class Multiply implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "ml";
     public static final String FUNCTION_NAME = "Multiply";
 

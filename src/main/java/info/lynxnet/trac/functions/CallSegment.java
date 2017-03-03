@@ -2,7 +2,11 @@ package info.lynxnet.trac.functions;
 
 import info.lynxnet.trac.*;
 
-public class CallSegment implements BuiltInFunction {
+@RegisteredFunction(
+        name = CallSegment.FUNCTION_NAME,
+        mnemonics = CallSegment.FUNCTION_MNEMONICS,
+        category = FunctionCategory.FORMS)
+public class CallSegment implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "cs";
     public static final String FUNCTION_NAME = "Call Segment";
 

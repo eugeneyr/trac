@@ -5,7 +5,11 @@ import info.lynxnet.trac.Form;
 import info.lynxnet.trac.Lexem;
 import info.lynxnet.trac.StackElement;
 
-public class CallCharacter implements BuiltInFunction {
+@RegisteredFunction(
+        name = CallCharacter.FUNCTION_NAME,
+        mnemonics = CallCharacter.FUNCTION_MNEMONICS,
+        category = FunctionCategory.FORMS)
+public class CallCharacter implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "cc";
     public static final String FUNCTION_NAME = "Call Character";
 

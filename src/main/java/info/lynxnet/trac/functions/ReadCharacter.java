@@ -7,7 +7,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ReadCharacter implements BuiltInFunction {
+@RegisteredFunction(
+        name = ReadCharacter.FUNCTION_NAME,
+        mnemonics = ReadCharacter.FUNCTION_MNEMONICS,
+        category = FunctionCategory.IO)
+public class ReadCharacter implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "rc";
     public static final String FUNCTION_NAME = "Read Character";
 

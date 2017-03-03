@@ -7,7 +7,11 @@ import info.lynxnet.trac.StackElement;
 
 import java.math.BigInteger;
 
-public class Subtract implements BuiltInFunction {
+@RegisteredFunction(
+        name = Subtract.FUNCTION_NAME,
+        mnemonics = {Subtract.FUNCTION_MNEMONICS, "-"},
+        category = FunctionCategory.ARITHMETIC)
+public class Subtract implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "su";
     public static final String FUNCTION_NAME = "Subtract";
 

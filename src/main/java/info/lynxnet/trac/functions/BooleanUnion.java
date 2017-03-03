@@ -4,7 +4,11 @@ import info.lynxnet.trac.Context;
 import info.lynxnet.trac.NumericUtils;
 import info.lynxnet.trac.StackElement;
 
-public class BooleanUnion implements BuiltInFunction {
+@RegisteredFunction(
+        name = BooleanUnion.FUNCTION_NAME,
+        mnemonics = {BooleanUnion.FUNCTION_MNEMONICS, "|"},
+        category = FunctionCategory.BOOLEAN)
+public class BooleanUnion implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "bu";
     public static final String FUNCTION_NAME = "Boolean Union";
 

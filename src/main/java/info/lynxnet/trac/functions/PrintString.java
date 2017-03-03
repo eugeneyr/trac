@@ -2,7 +2,11 @@ package info.lynxnet.trac.functions;
 
 import info.lynxnet.trac.*;
 
-public class PrintString implements BuiltInFunction {
+@RegisteredFunction(
+        name = PrintString.FUNCTION_NAME,
+        mnemonics = PrintString.FUNCTION_MNEMONICS,
+        category = FunctionCategory.IO)
+public class PrintString implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "ps";
     public static final String FUNCTION_NAME = "Print String";
 

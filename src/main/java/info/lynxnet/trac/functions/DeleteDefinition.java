@@ -3,7 +3,11 @@ package info.lynxnet.trac.functions;
 import info.lynxnet.trac.Context;
 import info.lynxnet.trac.StackElement;
 
-public class DeleteDefinition implements BuiltInFunction {
+@RegisteredFunction(
+        name = DeleteDefinition.FUNCTION_NAME,
+        mnemonics = DeleteDefinition.FUNCTION_MNEMONICS,
+        category = FunctionCategory.FORMS)
+public class DeleteDefinition implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "dd";
     public static final String FUNCTION_NAME = "Delete Definition";
 

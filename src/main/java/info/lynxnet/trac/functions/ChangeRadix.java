@@ -5,9 +5,13 @@ import info.lynxnet.trac.NumericUtils;
 import info.lynxnet.trac.PrefixedNumber;
 import info.lynxnet.trac.StackElement;
 
-public class ChangeRadix implements BuiltInFunction {
+@RegisteredFunction(
+        name = ChangeRadix.FUNCTION_NAME,
+        mnemonics = ChangeRadix.FUNCTION_MNEMONICS,
+        category = FunctionCategory.STRING)
+public class ChangeRadix implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "cx";
-    public static final String FUNCTION_NAME = "Chage Radix";
+    public static final String FUNCTION_NAME = "Change Radix";
 
     @Override
     public String getMnemonics() {

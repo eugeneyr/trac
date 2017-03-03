@@ -4,7 +4,11 @@ import info.lynxnet.trac.Context;
 import info.lynxnet.trac.NumericUtils;
 import info.lynxnet.trac.StackElement;
 
-public class BooleanIntersection implements BuiltInFunction {
+@RegisteredFunction(
+        name = BooleanIntersection.FUNCTION_NAME,
+        mnemonics = {BooleanIntersection.FUNCTION_MNEMONICS, "&"},
+        category = FunctionCategory.BOOLEAN)
+public class BooleanIntersection implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "bi";
     public static final String FUNCTION_NAME = "Boolean Intersection";
 
