@@ -1,17 +1,17 @@
-package info.lynxnet.trac.states;
+package info.lynxnet.trac.steps;
 
 import info.lynxnet.trac.Context;
 import info.lynxnet.trac.Lexem;
 import info.lynxnet.trac.StackElement;
 
-public class InterpreterState4 extends InterpreterStateBase {
+public class ProcessorStep4 extends ProcessorStepBase {
     @Override
     public boolean precondition(Context context) {
         return context.getActiveString().length() > 0;
     }
 
     @Override
-    public Class<? extends InterpreterState> actionAndTransition(Context context) {
+    public Class<? extends ProcessorStep> actionAndTransition(Context context) {
         char ch = context.getActiveString().charAt(0);
         if (ch == ',') {
             // end of a function argument and the beginning of the next one
@@ -30,9 +30,9 @@ public class InterpreterState4 extends InterpreterStateBase {
                 current.getArguments().add(new Lexem(context.getNeutralString().length()));
             }
             context.getActiveString().deleteCharAt(0);
-            return InterpreterState1.class;
+            return ProcessorStep1.class;
         } else {
-            return InterpreterState5.class;
+            return ProcessorStep5.class;
         }
     }
 }

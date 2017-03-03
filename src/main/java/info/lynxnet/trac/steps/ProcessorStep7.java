@@ -1,9 +1,9 @@
-package info.lynxnet.trac.states;
+package info.lynxnet.trac.steps;
 
 import info.lynxnet.trac.Constants;
 import info.lynxnet.trac.Context;
 
-public class InterpreterState7 extends InterpreterStateBase {
+public class ProcessorStep7 extends ProcessorStepBase {
     @Override
     public boolean precondition(Context context) {
         return context.getActiveString().length() > 0
@@ -13,14 +13,14 @@ public class InterpreterState7 extends InterpreterStateBase {
     }
 
     @Override
-    public Class<? extends InterpreterState> actionAndTransition(Context context) {
+    public Class<? extends ProcessorStep> actionAndTransition(Context context) {
         if (precondition(context)) {
             // a # that does not start a function
             context.getActiveString().deleteCharAt(0);
             context.getNeutralString().append('#');
-            return InterpreterState1.class;
+            return ProcessorStep1.class;
         } else {
-            return InterpreterState8.class;
+            return ProcessorStep8.class;
         }
     }
 }

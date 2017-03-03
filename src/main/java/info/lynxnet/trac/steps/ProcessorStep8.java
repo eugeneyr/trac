@@ -1,4 +1,4 @@
-package info.lynxnet.trac.states;
+package info.lynxnet.trac.steps;
 
 import info.lynxnet.trac.Context;
 import info.lynxnet.trac.FunctionEvaluator;
@@ -7,7 +7,7 @@ import info.lynxnet.trac.functions.ExecutionResult;
 
 import java.io.IOException;
 
-public class InterpreterState8 extends InterpreterStateBase {
+public class ProcessorStep8 extends ProcessorStepBase {
     @Override
     public boolean precondition(Context context) {
         return context.getActiveString().length() > 0
@@ -15,11 +15,11 @@ public class InterpreterState8 extends InterpreterStateBase {
     }
 
     @Override
-    public Class<? extends InterpreterState> actionAndTransition(Context context) {
+    public Class<? extends ProcessorStep> actionAndTransition(Context context) {
         if (precondition(context)) {
             // a closing parenthesis
             if (context.getCallStack().empty()) {
-                return InterpreterState0.class;
+                return ProcessorStep0.class;
             }
             context.getActiveString().deleteCharAt(0);
             StackElement current = context.getCallStack().pop();
@@ -31,7 +31,7 @@ public class InterpreterState8 extends InterpreterStateBase {
                 try {
                     int character = System.in.read();
                     if (!Character.isWhitespace(character)) {
-                        return InterpreterState0.class;
+                        return ProcessorStep0.class;
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -44,9 +44,9 @@ public class InterpreterState8 extends InterpreterStateBase {
                 context.getNeutralString().append(result.getValue());
             }
 
-            return InterpreterState1.class;
+            return ProcessorStep1.class;
         } else {
-            return InterpreterState9.class;
+            return ProcessorStep9.class;
         }
     }
 }

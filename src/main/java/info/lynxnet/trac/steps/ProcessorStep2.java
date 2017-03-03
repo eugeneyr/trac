@@ -1,8 +1,8 @@
-package info.lynxnet.trac.states;
+package info.lynxnet.trac.steps;
 
 import info.lynxnet.trac.Context;
 
-public class InterpreterState2 extends InterpreterStateBase {
+public class ProcessorStep2 extends ProcessorStepBase {
     @Override
     public boolean precondition(Context context) {
         return context.getActiveString().length() > 0
@@ -11,12 +11,12 @@ public class InterpreterState2 extends InterpreterStateBase {
     }
 
     @Override
-    public Class<? extends InterpreterState> actionAndTransition(Context context) {
+    public Class<? extends ProcessorStep> actionAndTransition(Context context) {
         char ch = context.getActiveString().charAt(0);
         if (Character.isSpaceChar(ch) && ch != ' ') {
             context.getActiveString().deleteCharAt(0);
-            return InterpreterState1.class;
+            return ProcessorStep1.class;
         }
-        return InterpreterState3.class;
+        return ProcessorStep3.class;
     }
 }
