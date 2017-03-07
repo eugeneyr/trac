@@ -13,21 +13,6 @@ public class BooleanUnion implements TracFunction {
     public static final String FUNCTION_NAME = "Boolean Union";
 
     @Override
-    public String getMnemonics() {
-        return FUNCTION_MNEMONICS;
-    }
-
-    @Override
-    public String getCategory() {
-        return FunctionCategory.BOOLEAN;
-    }
-
-    @Override
-    public String getName() {
-        return FUNCTION_NAME;
-    }
-
-    @Override
     public ExecutionResult execute(StackElement stackElement, Context context) {
         StringBuilder sb = new StringBuilder();
         if (stackElement.getArguments().size() > 2) {

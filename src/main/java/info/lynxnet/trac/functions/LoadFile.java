@@ -17,21 +17,6 @@ public class LoadFile implements TracFunction {
     public static final String FUNCTION_NAME = "Load File";
 
     @Override
-    public String getMnemonics() {
-        return FUNCTION_MNEMONICS;
-    }
-
-    @Override
-    public String getCategory() {
-        return FunctionCategory.IO;
-    }
-
-    @Override
-    public String getName() {
-        return FUNCTION_NAME;
-    }
-
-    @Override
     public ExecutionResult execute(StackElement stackElement, Context context) {
         String fileName = stackElement.getArgumentValue(1);
         Path path = FileSystems.getDefault().getPath(fileName);

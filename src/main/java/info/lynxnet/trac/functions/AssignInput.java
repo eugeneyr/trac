@@ -15,21 +15,6 @@ public class AssignInput implements TracFunction {
     public static final String FUNCTION_NAME = "Assign Input";
 
     @Override
-    public String getMnemonics() {
-        return FUNCTION_MNEMONICS;
-    }
-
-    @Override
-    public String getCategory() {
-        return FunctionCategory.IO;
-    }
-
-    @Override
-    public String getName() {
-        return FUNCTION_NAME;
-    }
-
-    @Override
     public ExecutionResult execute(StackElement stackElement, Context context) {
         String fileName = stackElement.getArgumentValue(1);
         if (fileName.length() == 0) {

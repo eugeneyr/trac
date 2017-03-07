@@ -16,21 +16,6 @@ public class ReadCharacter implements TracFunction {
     public static final String FUNCTION_NAME = "Read Character";
 
     @Override
-    public String getMnemonics() {
-        return FUNCTION_MNEMONICS;
-    }
-
-    @Override
-    public String getCategory() {
-        return FunctionCategory.IO;
-    }
-
-    @Override
-    public String getName() {
-        return FUNCTION_NAME;
-    }
-
-    @Override
     public ExecutionResult execute(StackElement stackElement, Context context) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(context.getInput()));
         StringBuilder result = new StringBuilder();

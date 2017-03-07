@@ -12,21 +12,6 @@ public class DecimalToCharacter implements TracFunction {
     public static final String FUNCTION_NAME = "Decimal to Character";
 
     @Override
-    public String getMnemonics() {
-        return FUNCTION_MNEMONICS;
-    }
-
-    @Override
-    public String getCategory() {
-        return FunctionCategory.STRING;
-    }
-
-    @Override
-    public String getName() {
-        return FUNCTION_NAME;
-    }
-
-    @Override
     public ExecutionResult execute(StackElement stackElement, Context context) {
         String string = stackElement.getArgumentValue(1);
         StringBuilder sb = new StringBuilder();

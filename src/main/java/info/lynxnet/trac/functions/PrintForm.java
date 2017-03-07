@@ -13,21 +13,6 @@ public class PrintForm implements TracFunction {
     public static final String FUNCTION_NAME = "Print Form";
 
     @Override
-    public String getMnemonics() {
-        return FUNCTION_MNEMONICS;
-    }
-
-    @Override
-    public String getCategory() {
-        return FunctionCategory.DEBUG;
-    }
-
-    @Override
-    public String getName() {
-        return FUNCTION_NAME;
-    }
-
-    @Override
     public ExecutionResult execute(StackElement stackElement, Context context) {
         if (stackElement.getArguments().size() > 1) {
             Lexem nameArg = stackElement.getArguments().get(1);

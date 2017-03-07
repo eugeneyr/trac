@@ -19,21 +19,6 @@ public class FetchBlock implements TracFunction {
     public static final String FUNCTION_NAME = "Fetch Block";
 
     @Override
-    public String getMnemonics() {
-        return FUNCTION_MNEMONICS;
-    }
-
-    @Override
-    public String getCategory() {
-        return FunctionCategory.STORAGE;
-    }
-
-    @Override
-    public String getName() {
-        return FUNCTION_NAME;
-    }
-
-    @Override
     public ExecutionResult execute(StackElement stackElement, Context context) {
         if (stackElement.getArguments().size() > 1) {
             String fileFormName = stackElement.getArgumentValue(1);

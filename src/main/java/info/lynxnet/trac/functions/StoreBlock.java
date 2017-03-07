@@ -18,21 +18,6 @@ public class StoreBlock implements TracFunction {
     public static final String FUNCTION_NAME = "Store Block";
 
     @Override
-    public String getMnemonics() {
-        return FUNCTION_MNEMONICS;
-    }
-
-    @Override
-    public String getCategory() {
-        return FunctionCategory.STORAGE;
-    }
-
-    @Override
-    public String getName() {
-        return FUNCTION_NAME;
-    }
-
-    @Override
     public ExecutionResult execute(StackElement stackElement, Context context) {
         if (stackElement.getArguments().size() > 2) {
             String fileFormName = stackElement.getArgumentValue(1);

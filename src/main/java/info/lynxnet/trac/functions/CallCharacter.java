@@ -13,21 +13,6 @@ public class CallCharacter implements TracFunction {
     public static final String FUNCTION_MNEMONICS = "cc";
     public static final String FUNCTION_NAME = "Call Character";
 
-    @Override
-    public String getMnemonics() {
-        return FUNCTION_MNEMONICS;
-    }
-
-    @Override
-    public String getCategory() {
-        return FunctionCategory.FORMS;
-    }
-
-    @Override
-    public String getName() {
-        return FUNCTION_NAME;
-    }
-
 
     @Override
     public ExecutionResult execute(StackElement stackElement, Context context) {

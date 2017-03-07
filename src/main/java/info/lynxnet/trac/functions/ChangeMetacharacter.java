@@ -11,21 +11,6 @@ public class ChangeMetacharacter implements TracFunction {
     public static final String FUNCTION_NAME = "Change Metacharacter";
 
     @Override
-    public String getMnemonics() {
-        return FUNCTION_MNEMONICS;
-    }
-
-    @Override
-    public String getCategory() {
-        return FunctionCategory.IO;
-    }
-
-    @Override
-    public String getName() {
-        return FUNCTION_NAME;
-    }
-
-    @Override
     public ExecutionResult execute(StackElement stackElement, Context context) {
         if (stackElement.getArguments().size() > 1) {
             Lexem arg = stackElement.getArguments().get(1);
