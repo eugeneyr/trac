@@ -11,21 +11,6 @@ public class SegmentString implements TracFunction {
     public static final String FUNCTION_NAME = "Segment String";
 
     @Override
-    public String getMnemonics() {
-        return FUNCTION_MNEMONICS;
-    }
-
-    @Override
-    public String getCategory() {
-        return FunctionCategory.FORMS;
-    }
-
-    @Override
-    public String getName() {
-        return FUNCTION_NAME;
-    }
-
-    @Override
     public ExecutionResult execute(StackElement stackElement, Context context) {
         if (stackElement.getArguments().size() > 2) {
             Lexem nameArg = stackElement.getArguments().get(1);
@@ -39,7 +24,8 @@ public class SegmentString implements TracFunction {
                     if (val != null && val.length() > 0) {
                         while (form.getPointer() < form.getBody().length() && form.getBody().substring(form.getPointer()).contains(val)) {
                             int pos = form.getPointer() + form.getBody().substring(form.getPointer()).indexOf(val);
-                            if (!form.hasMarkers(pos, val.length())) {
+                            // a new marker should not overlap with / erase other markers
+                            if (!form.hasMarkers(pos + 1, val.length())) {
                                 form.adjustOffsets(pos + val.length(), -val.length());
                                 FormMarker marker = new FormMarker(ordinal, pos);
                                 form.getMarkers().add(marker);
